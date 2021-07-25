@@ -1,16 +1,13 @@
-const { response } = require('express')
 const express = require('express')
+const router   = require('./router')
 const app = express()
 
+/** VARIÁVEL DE AMBIENTE - Porta da Aplicação */
 require('dotenv/config')
 app.use(express.json())
 
-
-app.post("/", (require, response) => {
-  return response.status(200).json({
-    message: "Página Inicial do projeto"
-  })
-})
+/**Utiliza o arquivo ROUTER.JS para capturar as rotas */
+app.use(router)
 
 app.listen(process.env.BACKEND_PORT, () =>{
   console.log(`Server is Run on PORT`, process.env.API_PORT)
