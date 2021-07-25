@@ -9,6 +9,6 @@ app.use(express.json())
 /**Utiliza o arquivo ROUTER.JS para capturar as rotas */
 app.use(router)
 
-app.listen(process.env.BACKEND_PORT, () =>{
+app.listen(process.env.API_PORT, () =>{
   console.log(`Server is Run on PORT`, process.env.API_PORT)
 })
